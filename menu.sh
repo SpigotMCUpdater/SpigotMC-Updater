@@ -1,29 +1,55 @@
 #!/bin/bash
 
-@echo off
+START_DIR=$(pwd)
 
-@echo This build is in beta and could break important files. Continue: 
-Set /P _1=(Y, N) || Set _1=NothingChosen
-If "%_1%"=="NothingChosen" goto :start
-If /i "%_1%"=="Y" goto start
-If /i "%_1%"=="y" goto start
-If /i "%_1%"=="N" goto stop
-If /i "%_1%"=="n" goto stop
+function drawMenu {
+ if [ $1 = "main" ]
+ then
+  clear
+  echo "Main Menu: "
+  echo "    [1] Update BuildTools"
+  echo "    [2] Update BungeeCord"
+  echo "    [3] Update Spigot"
+  echo "    [4] "
+  echo "    [5] "
+  echo "    [6] "
+  echo "    [7] "
+  echo "    [8] "
+  echo "    [9] Exit"
+  echo -n "Option > "
+  read option
+  if [ $option = "1" ]
+  then
+   clear
+   echo "Downloading the latest BuildTools..."
+   curl -O --progress-bar https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+   if [ $? -ne 0 ]
+   then
+    pause Download failed. Press enter to return to the main menu
+   fi
+   drawMenu main
+  elif [ $option = "2" ]
+  then
+   clear
+   echo "Downloading the latest BungeeCord..."
+   curl -O --progress-bar http://ci.md-5.net/job/bungeecord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar
+   if [ $? -ne 0 ]
+   then
+    pause Download failed. Press enter to return to the main menu
+   fi
+   drawMenu main
+  elif [ $option = "9" ]
+  then
+   exit
+  else
+   drawMenu main
+  fi
+ fi
+}
 
-:start
-if exist config/ (@echo config folder exists) else (@echo config folder not found. Generating Directory...
-md config)
+function pause {
+   read -p "$*"
+}
 
-if exist config/version.txt (@echo version.txt was found) else (@echo version.txt is missing. Creating config option...
-curl -o config/version.txt http://thegearmc.com/update/version.txt
-)
-
-if exist files/ (@echo Directory files was found) else (@echo Directory files doesn't exist. Generating directory...
-md files
-)
-
-:stop
-@echo Thanks for using SpigotMC updater by SpigotMCUpdater
-@echo Contributors: Legoman99573, qlimax5000, and NatoBoram
-@pause
-exit
+drawMenu main
+sleep 3
