@@ -10,5 +10,5 @@ curl -o BuildTools.jar https://hub.spigotmc.org/jenkins/job/BuildTools/lastBuild
 java -jar BuildTools.jar --rev latest
 find "./Spigot/Spigot-API/target/" -name "spigot-api-*-shaded.jar" -exec cp -i {} . \;
 rm BuildTools.jar
-curl -o BuildTools.sh https://raw.githubusercontent.com/Legoman99573/SpigotMC-Updater/master/BuildTools.sh
+curl -o BuildTools.sh https://raw.githubusercontent.com/SpigotMCUpdater/SpigotMC-Updater/master/BuildTools.sh
 exit
