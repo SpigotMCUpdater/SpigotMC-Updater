@@ -9,7 +9,7 @@ curl -o License.txt --progress-bar https://raw.githubusercontent.com/Legoman9957
 curl -o BuildTools.jar --progress-bar https://hub.spigotmc.org/jenkins/job/BuildTools/lastBuild/artifact/target/BuildTools.jar
 curl -o BungeeCord.jar --progress-bar http://ci.md-5.net/job/BungeeCord/lastBuild/artifact/bootstrap/target/BungeeCord.jar
 java -jar BuildTools.jar --rev latest
-find "./Spigot/Spigot-API/target/" -name "spigot-api-*-shaded.jar" -exec cp -u {} . \;
+find "./Spigot/Spigot-API/target/" -name "spigot-api-*-shaded.jar" -exec cp -f {} . \;
 rm BuildTools.jar
 curl -o BuildTools.sh --progress-bar https://raw.githubusercontent.com/SpigotMCUpdater/SpigotMC-Updater/master/BuildTools.sh
 exit
