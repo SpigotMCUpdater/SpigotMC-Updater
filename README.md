@@ -8,7 +8,7 @@ Download, update and install [BuildTools.jar](https://hub.spigotmc.org/jenkins/j
 3. Run [BuildTools.sh](https://raw.githubusercontent.com/SpigotMCUpdater/SpigotMC-Updater/master/BuildTools.sh)
 
 ### How to install [Java](http://www.java.com/en/download/manual.jsp)
-This guide shows how to install [Java](http://www.java.com/en/download/manual.jsp) in order to use it quickly. If you didn't use these steps during your installation, it is recommended that you reinstall it because some of these steps are mendatory for this auto updater. To begin, download [Windows Offline](http://javadl.oracle.com/webapps/download/AutoDL?BundleId=207229) and [Windows Offline (64-bit)](http://javadl.oracle.com/webapps/download/AutoDL?BundleId=207231).
+This guide shows how to install [Java](http://www.java.com/en/download/manual.jsp) in order to use it quickly. If you didn't use these steps during your installation, it is recommended that you reinstall it because some of these steps are mendatory for this auto updater. To begin, download [Windows Offline](http://javadl.oracle.com/webapps/download/AutoDL?BundleId=207773) and [Windows Offline (64-bit)](http://javadl.oracle.com/webapps/download/AutoDL?BundleId=207775).
 
 ![1](https://raw.githubusercontent.com/SpigotMCUpdater/SpigotMC-Updater/master/HowTo/Java/1.PNG)
 ![2](https://raw.githubusercontent.com/SpigotMCUpdater/SpigotMC-Updater/master/HowTo/Java/2.PNG)
@@ -33,9 +33,9 @@ This guide shows how to install [BuildTools.sh](https://raw.githubusercontent.co
 2. Right-click on the text
 3. Select "Save as..."
 4. Save it anywhere
-5. Double-click on BuildTools.sh
+5. Double-click on [BuildTools.sh](https://raw.githubusercontent.com/SpigotMCUpdater/SpigotMC-Updater/master/BuildTools.sh)
 
-The script will download [BuildTools.jar](https://hub.spigotmc.org/jenkins/job/BuildTools/), execute it, delete [BuildTools.jar](https://hub.spigotmc.org/jenkins/job/BuildTools/), update itself and exit.
+The script will download [BuildTools.jar](https://hub.spigotmc.org/jenkins/job/BuildTools/), download [BungeeCord.jar](http://ci.md-5.net/job/BungeeCord/), execute [BuildTools.jar](https://hub.spigotmc.org/jenkins/job/BuildTools/), delete [BuildTools.jar](https://hub.spigotmc.org/jenkins/job/BuildTools/), update itself and exit.
 
 ## Attributions
 [Free Software Foundation](http://www.gnu.org/licenses/gpl) | [BuildTools](https://hub.spigotmc.org/jenkins/job/BuildTools/) | [Git for Windows](https://git-for-windows.github.io/) | [Java](http://www.java.com) | [Mojang](http://mojang.com/) | [Semantic Versionning](http://semver.org/) | [Spigot](https://www.spigotmc.org/)
