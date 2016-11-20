@@ -1,3 +1,4 @@
+#!/bin/bash
 curl -o License.txt --progress-bar https://raw.githubusercontent.com/SpigotMCUpdater/SpigotMC-Updater/master/LICENSE
 clear
 read -t60 -n1 -r -p "SpigotMC Updater : Updates everything Spigot-related. Copyright (C) 2016 NatoBoram
